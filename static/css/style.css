@@ -1,0 +1,187 @@
+/* -------- HERO SECTION -------- */
+.hero-section {
+    position: relative;
+    height: 90vh;
+    background: url("../images/diamond_bg.jpeg") center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+    position: relative;
+    color: #fff;
+    z-index: 5;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.hero-text {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* -------- FEATURE CARDS -------- */
+.feature-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: transform .3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+.feature-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.feature-text {
+    font-size: .95rem;
+}
+
+/* -------- FOOTER -------- */
+.footer {
+    padding: 20px;
+    background: #111;
+    color: #aaa;
+}
+
+
+/* -------- DARK/LIGHT MODE -------- */
+:root {
+    --card-bg: #ffffff;
+    --text-color: #000;
+    --bg-color: #f5f7fa;
+}
+
+.dark-mode {
+    --card-bg: #2b2b2b;
+    --text-color: #fff;
+    --bg-color: #121212;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌙 Dark Mode Styling */
+.dark-mode {
+    background-color: #121212 !important;
+    color: #eaeaea !important;
+}
+
+.dark-mode .navbar,
+.dark-mode footer {
+    background-color: #1f1f1f !important;
+}
+
+.dark-mode .card {
+    background-color: #1f1f1f !important;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode input,
+.dark-mode select {
+    background-color: #222 !important;
+    color: #fff !important;
+}
+
+/* HERO SECTION */
+.hero-section {
+    background: url("../images/diamond_bg.jpeg") no-repeat center center/cover;
+    height: 85vh;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+}
+
+/* Text shadow for better contrast */
+.text-shadow {
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+}
+
+/* Feature Cards */
+.feature-card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 25px rgba(0,0,0,0.2);
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .hero-section {
+    filter: brightness(0.7);
+}
+
+.dark-mode .card {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+
+body {
+    background: url('/static/images/diamond_bg.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    color: #fff;
+}
+
+.form-control, .form-select {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+}
+
+.dark-mode .glass-card {
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+    background: rgba(30, 30, 30, 0.8);
+    color: #fff;
+}
+
+

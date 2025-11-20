@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-lg p-4 glass-card">
+                <h2 class="text-center mb-4 fw-bold">💎 Diamond Price Prediction</h2>
+
+                <form action="{{ url_for('predict_datapoint') }}" method="POST">
+
+                    <div class="mb-3">
+                        <label class="form-label">Carat</label>
+                        <input type="number" step="0.01" name="carat" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Depth</label>
+                        <input type="number" step="0.01" name="depth" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Table</label>
+                        <input type="number" step="0.01" name="table" class="form-control" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label class="form-label">x</label>
+                            <input type="number" step="0.01" name="x" class="form-control" required>
+                        </div>
+
+                        <div class="col mb-3">
+                            <label class="form-label">y</label>
+                            <input type="number" step="0.01" name="y" class="form-control" required>
+                        </div>
+
+                        <div class="col mb-3">
+                            <label class="form-label">z</label>
+                            <input type="number" step="0.01" name="z" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Cut</label>
+                        <select class="form-select" name="cut">
+                            <option>Fair</option>
+                            <option>Good</option>
+                            <option>Very Good</option>
+                            <option>Premium</option>
+                            <option>Ideal</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Color</label>
+                        <select class="form-select" name="color">
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                            <option>H</option>
+                            <option>I</option>
+                            <option>J</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Clarity</label>
+                        <select class="form-select" name="clarity">
+                            <option>I1</option>
+                            <option>SI2</option>
+                            <option>SI1</option>
+                            <option>VS2</option>
+                            <option>VS1</option>
+                            <option>VVS2</option>
+                            <option>VVS1</option>
+                            <option>IF</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary w-100 fw-bold">Predict Price</button>
+                </form>
+
+                {% if final_result %}
+                <div class="alert alert-success text-center mt-4">
+                    <h4>Predicted Price: $ {{ final_result }}</h4>
+                </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
